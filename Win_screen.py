@@ -23,7 +23,7 @@ class Win_screen:
         self.button2_presionado = pygame.transform.scale(self.button2_presionado, (self.button_width, self.button_height))
 
         self.button1_rect = self.button1_normal.get_rect(center=(2*WIDTH//4, HEIGHT // 2 + 65))
-        self.button2_rect = self.button2_normal.get_rect(center=(2*WIDTH//4, HEIGHT // 2 + 140))
+        self.button2_rect = self.button2_normal.get_rect(center=(2*WIDTH//4, HEIGHT // 2 + 160))
 
         self.button_seleccionado = 0
         self.result = None
@@ -66,6 +66,10 @@ class Win_screen:
 
 
     def go_screen(self):
+        pygame.mixer.music.stop()
+        pygame.mixer.music.load(".\\assets\\music\\win_track.mp3")
+        pygame.mixer.music.play(loops=-1, start=0.0)
+        pygame.mixer.music.set_volume(0.5)
         while self.running:
             self.screen.fill((255, 255,255))
 
@@ -80,7 +84,11 @@ class Win_screen:
     def go_menu(self):
         from First_screen import First_Screen
         first_screen = First_Screen()
-        first_screen.menu_principal()
+        result = first_screen.tit_screen()
+        if result == "start":
+            first_screen.go_game()
+        elif result == "quit":
+            first_screen.go_exit()
 
     def go_exit(self):
         pygame.quit()

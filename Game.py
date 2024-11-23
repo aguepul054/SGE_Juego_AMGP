@@ -13,7 +13,7 @@ from Win_screen import Win_screen
 WHITE = (255, 255, 255)
 WIDTH, HEIGHT = 500, 500
 ALIEN_ROWS = 4
-ALIEN_COLS = 6
+ALIEN_COLS = 7
 # Esto es para capar a los 60fps
 FPS = 60
 
