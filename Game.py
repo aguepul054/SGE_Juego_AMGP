@@ -1,10 +1,12 @@
-from turtledemo.penrose import start
 
 from pygame import *
 import sys
+
 from Player import *
 from Alien import *
 from Bullet import *
+from Game_over_screen import *
+from Win_screen import Win_screen
 
 # PROYECTO SIN IMAGENES / ANIMACIONES / COLISIONES ENTRE ALIENS
 
@@ -71,7 +73,7 @@ class Game:
                     bullet.trigger_explosion()
 
             if not self.aliens_sprites:
-                print("¡¡¡GANASTE!!!")
+                self.win_game()
                 running = False
 
             self.screen.blit(self.fondo_juego, (0, 0))
@@ -88,8 +90,20 @@ class Game:
         sys.exit()
 
     def game_over(self):
-        print("¡GAME OVER!")
-        pygame.quit()
-        sys.exit()
+        gameov = Game_over_screen()
+        result = gameov.go_screen()
 
+        if result == "restart":
+            gameov.go_menu()
+        elif result == "quit":
+            gameov.go_exit()
 
+    def win_game(self):
+        wingame = Win_screen()
+
+        result = wingame.go_screen()
+
+        if result == "restart":
+            wingame.go_menu()
+        elif result == "quit":
+            wingame.go_exit()

@@ -3,7 +3,7 @@ import random
 WIDTH, HEIGHT = 500,500
 
 
-ALIEN_SPEED = 1
+ALIEN_SPEED = 50
 
 enemy_lvl1 = pygame.image.load(".\\assets\\images\\Aliens\\Enemy_1_A_Small.png")
 enemy_lvl1_2 = pygame.image.load(".\\assets\\images\\Aliens\\Enemy_1_B_Small.png")
