@@ -53,8 +53,7 @@ class Bullet(pygame.sprite.Sprite):
             # Cuando el frame llegue a cero significará que la explosión termina y eliminamos la bala
             if self.frame == 0:
                 self.kill()
-
-    # Este método se llama para activar la animación de la explosión
+    """Este método se llama para activar la animación de la explosión"""
     def trigger_explosion(self):
         self.animation_state = "explosion"  # Cambiamos el estado de la animación a explosion
         self.frame = 0 # Reseteamos el frame a 0 para comenzar desde el inicio de la animación
