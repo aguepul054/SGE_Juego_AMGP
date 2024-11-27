@@ -4,7 +4,7 @@ import random
 WIDTH, HEIGHT = 500,500
 
 #Velocidad del alien
-ALIEN_SPEED = 1
+ALIEN_SPEED = 3
 
 #Cargamos las imagenes de aliens y las redimensionamos
 enemy_lvl1 = pygame.image.load(".\\assets\\images\\Aliens\\Enemy_1_A_Small.png")

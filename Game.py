@@ -56,7 +56,7 @@ class Game:
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    running = False # Termina el juego si secierra la ventana
+                    running = False # Termina el juego si se cierra la ventana
                 if event.type == pygame.KEYDOWN: # Si se presiona una letra
                     if event.key == pygame.K_SPACE: # Si la tecla es espacio
                         bullet = Bullet(self.player.rect.centerx, self.player.rect.top) # Crea una bala en la posicion del jugador
@@ -69,7 +69,7 @@ class Game:
             if pygame.sprite.spritecollide(self.player, self.aliens_sprites, False):
                 self.game_over()  # Si hay colisión, el jugado pierde y se muestra la pantalla de game over
 
-            # Revis si el jugador colisiona con algún alienígena
+            # Revisa si el jugador colisiona con algún alienígena
             for bullet in self.bullets_sprites:
                 alien_hits = pygame.sprite.spritecollide(bullet, self.aliens_sprites, True) # Elimina los aliens alcanzados por la bala
                 if alien_hits:
